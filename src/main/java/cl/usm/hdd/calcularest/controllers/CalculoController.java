@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 
 public class CalculoController {
+    //Esto es lo que finalmente se comunica con las peticiones http
     @Autowired
     private CalculoService calculoService;
     @PostMapping("/calcular")
