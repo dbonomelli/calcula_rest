@@ -14,8 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class CalculoController {
     //Esto es lo que finalmente se comunica con las peticiones http
-    @Autowired
+
     private CalculoService calculoService;
+    //1. constructor
+    @Autowired
+    public CalculoController(CalculoService calculoService){
+        this.calculoService = calculoService;
+    }
+
+
     @PostMapping("/calcular")
     public ResponseEntity<CalculoResponse> calcular(@RequestBody CalculoRequest calculoRequest){
         try{
